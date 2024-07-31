@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>APPLICATION FOR REGISTRATION AND LICENSING AS A PROCURING OR DISPOSAL AGENT </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 5mm 10mm;
+        }
+        
+        body {
+            -webkit-print-color-adjust: exact;
+        }
+        
+        p {
+            margin: 0;
+        }
+        
+        table {
+            text-indent: 0;
+            border-color: inherit;
+            border-collapse: collapse;
+            border-spacing: 0;
+            padding: 0;
+            width: 100%;
+            table-layout: auto;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body style="font-family: 'Lexend', sans-serif; font-size: 16px; line-height: 20px; font-weight: 400;">
+    <div style="position:absolute; top:0; left:0; bottom:0; right:0; z-index:-0.2; width:100%; height:100%; opacity: 0.25; background-repeat: repeat-y; background-size: cover; ">
+        <img src="./images/ppra-watermark.svg" alt="" style="width: 100%; display: block; margin-left:auto; margin-right:auto; margin-top: 40%;">
+    </div>
+    <div style="position: relative;">
+        <table style="height: 100%; width: 100%; table-layout: auto;" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr>
+                    <td style="padding: 30px 40px;">
+                        <table width="100%" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <!-- Header section -->
+                                <!-- <tr>
+                                    <td style="vertical-align: top;">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td>
+                                                    <table width="100%">
+                                                        <tr>
+                                                            <td style="padding-right: 100px;">
+                                                                <img style="width: 80%;" src="./images/ppra-logo.svg" alt="" />
+                                                            </td>
+
+                                                            <td align="right">
+                                                                <img style="height: 100px; margin-left: auto;" src="./images/ppra-qr.png" alt="" />
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr> -->
+                                <!-- End header -->
+
+                                <tr>
+                                    <td style="padding: 12px 0px 20px 0px;">
+                                        <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse: initial;">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="50%">
+                                                        <p style="font-weight:700;">Annex 3</p>
+                                                    </td>
+                                                    <td>
+                                                        <p style="font-weight:700; text-align: right;">{{application_number}}</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <p style="font-weight:700;">APPLICATION FOR REGISTRATION AND LICENSING AS A PROCURING OR DISPOSAL AGENT</p>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="padding-top: 20px;">
+
+                                        <p style="font-weight:700;">
+                                            CATEGORY OF PRACTICE <span style="width: 70%; display:inline-block; border-bottom: 1px dotted black;"> {% for item in form_data.ChooseCategories %}
+                                                {{item}} {% if forloop.last == false %},{% endif %}
+                                                {% endfor %}
+                                    
+                                            </span>
+                                        </p>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="padding-top: 20px;">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td width="80%">
+                                                    <p>
+                                                        Director General <span style="display: block;">Public Procurement Regulatory Authority</span>P. O. Box {{form_data.Postaladdress}} - {{form_data.PostalCode}}<span style="display: block; font-weight: 700;">NAIROBI</span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <!-- Section A -->
+                                <tr>
+                                    <td style="padding-top: 20px;">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td>
+                                                    <p>
+                                                        <b>A <span style="padding-left: 12px;">General information</span></b>
+                                                    </p>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td style="padding-top: 20px;">
+                                                    <p>
+                                                        Name of individual/firm: <span style="width: 68%; display:inline-block; border-bottom: 1px dotted black;">{{user.first_name}} {{user.other_name}} {{user.last_name}}</span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-top: 16px;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-top: 16px;">
+                                                    <p>
+                                                        Street: <span style="width: 45%; display:inline-block; border-bottom: 1px dotted black;"> {{form_data.Street}} </span> Building: <span style="width: 35%; display:inline-block; border-bottom: 1px dotted black;"> {{form_data.Building}} </span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-top: 16px;">
+                                                    <p>
+                                                        Postal address: <span style="width: 20%; display:inline-block; border-bottom: 1px dotted black;"> {{form_data.Postaladdress}} </span> Code: <span style="width: 20%; display:inline-block; border-bottom: 1px dotted black;"> {{form_data.PostalCode}} </span>                    Town: <span style="width: 24%; display:inline-block; border-bottom: 1px dotted black;">{{form_data.Town}}</span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-top: 16px;">
+                                                    <p>
+                                                        Telephone address: <span style="width: 74%; display:inline-block; border-bottom: 1px dotted black;"> {{user.phone_number}} </span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-top: 16px;">
+                                                    <p>
+                                                        Email address: <span style="width: 79%; display:inline-block; border-bottom: 1px dotted black;">{{user.email}}</span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-top: 16px;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-top: 16px;">
+                                                    <p>
+                                                        Nationality/citizenship: <span style="width: 70%; display:inline-block; border-bottom: 1px dotted black;"> {{form_data.Nationality}} </span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <!-- Section B -->
+                                <tr>
+                                    <td style="padding-top: 20px;">
+                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td>
+                                                    <p>
+                                                        <b>B <span style="padding-left: 12px;">Educational information</span></b>
+                                                    </p>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Universities -->
+                                            {% for universities in data.UniversitiesAttended %}
+                                            <tr>
+
+                                                <td style="padding-top: 20px;">
+                                                   
+                                                    <p>
+                                                        Universities attended: <span style="width: 72%; display:inline-block; border-bottom: 1px dotted black;">{{universities.DetailsUniversities.Universityname}}</span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                           
+                                            <tr>
+                                                <td style="padding-top: 10px;">
+                                                    <p>
+                                                        Course Name: <span style="width: 80%; display:inline-block; border-bottom: 1px dotted black;margin-bottom: 10px;"> {{universities.DetailsUniversities.CourseName}} </span> </p>
+                                                       
+                                                    
+                                                 <p>Qualification: <span style="width: 81%; display:inline-block; border-bottom: 1px dotted black; "> {{universities.DetailsUniversities.Qualification}} </span><br>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+
+                                            <!-- Colleges -->
+                                             {% for colleges in data.CollegesAttended %}
+                                            <tr>
+                                                <td style="padding-top: 20px;">
+                                                   
+                                                    <p>
+                                                        Colleges attended: <span style="width: 75%; display:inline-block; border-bottom: 1px dotted black;">{{colleges.DetailsUniversities.Collegename}}</span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                            
+                                            <tr>
+                                                <td style="padding-top: 10px;">
+                                                    <p>
+                                                        Course Name: <span style="width: 80%; display:inline-block; border-bottom: 1px dotted black; margin-bottom: 10px;"> {{colleges.DetailsUniversities.CourseName}} </span></p>
+                                                       
+                                                    
+                                                    <p> Qualification: <span style="width: 81%; display:inline-block; border-bottom: 1px dotted black;"> {{colleges.DetailsUniversities.Qualification}} </span>
+                                                    </p><br>
+                                               </td>
+                                            </tr>
+                                            {% endfor %}
+
+                                            <!-- Schools -->
+                                            {% for other in data.OtherschoolsAttended %}
+                                            <tr>
+                                                <td style="padding-top: 0px;">
+                                                    
+                                                    <p>
+                                                        Schools attended: <span style="width: 77%; display:inline-block; border-bottom: 1px dotted black;">{{other.DetailsUniversities.Nameoftheschool}}</span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                           
+                                            <tr>
+                                                <td style="padding-top: 10px;">
+                                                    <p>
+                                                        Course Name: <span style="width: 80%; display:inline-block; border-bottom: 1px dotted black;margin-bottom: 10px;"> {{other.DetailsUniversities.CourseName}} </span> </p>
+                                                    <p>Qualification: <span style="width: 81%; display:inline-block; border-bottom: 1px dotted black;"> {{other.DetailsUniversities.Qualification}} </span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Page 2 -->
+    <div style="position: relative; page-break-before: always;">
+        <div style="position:absolute; top:0; left:0; bottom:0; right:0; z-index:-0.2; width:100%; height:100%; opacity: 0.25; background-repeat: repeat-y; background-size: cover; ">
+            <img src="./images/ppra-watermark.svg" alt="" style="width: 100%; display: block; margin-left:auto; margin-right:auto; margin-top: 40%;">
+        </div>
+        <div style="position: relative;">
+            <table style="height: 100%; width: 100%; table-layout: auto;" cellspacing="0" cellpadding="0">
+                <tbody>
+                    <tr>
+                        <td style="padding: 30px 40px;">
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <!-- Section C -->
+                                    <tr>
+                                        <td style="padding-top: 20px;">
+                                            <table width="100%" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>
+                                                        <p>
+                                                            <b>C <span style="padding-left: 12px;">Membership of professional institutions</span></b>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                {% for members in data.MembershipDetails %}
+                                                <tr>
+                                                    <td style="padding-top: 20px;">
+                                                        <p>
+                                                            Membership Name: <span style="width: 78%; display:inline-block; border-bottom: 1px dotted black;">{{members.Membershipname}}</span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            Membership/Registration number: <span style="width: 63%; display:inline-block; border-bottom: 1px dotted black;">{{members.MembershipRegistrationnumber}}</span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            Date of registration: <span style="width: 78%; display:inline-block; border-bottom: 1px dotted black;"> {{members.DateofRegistration}} </span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            License number: <span style="width: 82%; display:inline-block; border-bottom: 1px dotted black;"> {{members.LicenceNumber}} </span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            Date of annual practice licence: <span style="width: 66%; display:inline-block; border-bottom: 1px dotted black;"> {{members.DateofAnnualpracticeLicence}} </span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                {% endfor %}
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Section D -->
+                                    <tr>
+                                        <td style="padding-top: 20px;">
+                                            <table width="100%" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>
+                                                        <p>
+                                                            <b>D <span style="padding-left: 12px;">Experience and employment</span></b>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                {% for employment in data.EmployementDetails %}
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            Name of employer: <span style="width: 36%; display:inline-block; border-bottom: 1px dotted black;"> {{employment.NameofEmployer}} </span> Designation: <span style="width: 29%; display:inline-block; border-bottom: 1px dotted black;"> {{employment.DesignationEmployment}} </span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            From: <span style="width: 47%; display:inline-block; border-bottom: 1px dotted black;"> {{employment.FromEmployed}} </span> To: <span style="width: 40%; display:inline-block; border-bottom: 1px dotted black;"> {{employment.ToEmployed}} </span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                {% endfor %}
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Section E -->
+                                    <tr>
+                                        <td style="padding-top: 20px;">
+                                            <table width="100%" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>
+                                                        <p>
+                                                            <b>E <span style="padding-left: 12px;">Self employment</span></b>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                {% for self in data.SelfEmploymentDetails %}
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            Name of firm: <span style="width: 40%; display:inline-block; border-bottom: 1px dotted black;"> {{self.NameofFirmSelfEmployment}} </span> Designation: <span style="width: 29%; display:inline-block; border-bottom: 1px dotted black;"> {{self.DesignationSelfEmployment}} </span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            From: <span style="width: 46%; display:inline-block; border-bottom: 1px dotted black;"> {{self.FromEmployed}} </span> To: <span style="width: 41%; display:inline-block; border-bottom: 1px dotted black;"> {{self.ToEmployed}} </span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                {% endfor %}
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Section F -->
+                                    <tr>
+                                        <td style="padding-top: 20px;">
+                                            <table width="100%" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>
+                                                        <p>
+                                                            <b>F <span style="padding-left: 12px;">Practice in Procuring or Asset Disposal Agency</span></b>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            Firm: <span style="width: 45%; display:inline-block; border-bottom: 1px dotted black;"> {{form_data.NameofFirm}} </span> Designation: <span style="width: 34%; display:inline-block; border-bottom: 1px dotted black;"> {{form_data.Designation}} </span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            Firm agency registration number: <span style="width: 64%; display:inline-block; border-bottom: 1px dotted black;"> {{form_data.Firmagencyregistrationnumber}} </span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            Firm licence number: <span style="width: 76%; display:inline-block; border-bottom: 1px dotted black;"> {{form_data.Firmlicencenumber}} </span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            Firm annual practising licence number: <span style="width: 59%; display:inline-block; border-bottom: 1px dotted black;"> {{form_data.Firmannualpractisinglicencenumber}} </span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Section G -->
+                                    <tr>
+                                        <td style="padding-top: 20px;">
+                                            <table width="100%" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>
+                                                        <p>
+                                                            <b>G <span style="padding-left: 12px;">Other business/professional practices</span></b>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            Firm: <span style="width: 45%; display:inline-block; border-bottom: 1px dotted black;"> {{form_data.Firm}} </span> Designation: <span style="width: 33%; display:inline-block; border-bottom: 1px dotted black;"> {{form_data.OtherrDesignation}} </span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            Firm agency registration number: <span style="width: 63%; display:inline-block; border-bottom: 1px dotted black;"> {{form_data.OtherFirmagencyregistrationnumber}} </span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            Firm licence number: <span style="width: 75%; display:inline-block; border-bottom: 1px dotted black;"> {{form_data.OtherFirmlicencenumber}} </span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            Firm annual practising licence number: <span style="width: 58%; display:inline-block; border-bottom: 1px dotted black;"> {{form_data.OtherFirmannualpractisinglicencenumber}} </span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Section H -->
+                                    <tr>
+                                        <td style="padding-top: 20px;">
+                                            <table width="100%" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>
+                                                        <p>
+                                                            <b>H <span style="padding-left: 12px;">Other grounds to support the application</span></b>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="padding-top: 20px;">
+                                                        <p>
+                                                            Give three names and addresses of procurement professionals who know your background history well.
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                {% for professionals in data.Othergroundstosupporttheapplication %}
+                                                <tr>
+                                                    <td style="padding-top: 10px;">
+                                                        <p>
+                                                            Full Name: <span style="width: 25%; display:inline-block; border-bottom: 1px dotted black;">{{professionals.FullNames}}</span> Profession: <span style="width: 25%; display:inline-block; border-bottom: 1px dotted black;"> {{professionals.Profession}} </span> Address: <span style="width: 17%; display:inline-block; border-bottom: 1px dotted black;">{{professionals.Address}}</span>                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                {% endfor %}
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Page 3 -->
+    <div style="position: relative; page-break-before: always;">
+        <div style="position:absolute; top:0; left:0; bottom:0; right:0; z-index:-0.2; width:100%; height:100%; opacity: 0.25; background-repeat: repeat-y; background-size: cover; ">
+            <img src="./images/ppra-watermark.svg" alt="" style="width: 100%; display: block; margin-left:auto; margin-right:auto; margin-top: 40%;">
+        </div>
+        <div style="position: relative;">
+            <table style="height: 100%; width: 100%; table-layout: auto;" cellspacing="0" cellpadding="0">
+                <tbody>
+                    <tr>
+                        <td style="padding: 30px 40px;">
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <!-- Section I -->
+                                    <tr>
+                                        <td style="padding-top: 20px;">
+                                            <table width="100%" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>
+                                                        <p>
+                                                            <b>I <span style="padding-left: 12px;">Bankruptcy or conviction</span></b>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="padding-top: 20px;">
+                                                        <p>
+                                                            Have you ever been declared bankrupt or convicted of any offence involving corruption or fraud or dishonesty in public procurement? Yes or No
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 12px;">
+                                                        <p>
+                                                            If Yes, provide details.
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 24px;">
+                                                        <p>
+                                                            I, enclose herewith:
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 12px;">
+                                                        <ol type="a" style="padding:0; margin: 0; padding-left:24px; margin-bottom: 4px;">
+                                                            <li>Evidence of payment of application fee of Kshs.50,000.00</li>
+                                                            <li>Copy of the firm’s/my Professional Indemnity Cover</li>
+                                                            <li>Copy of Identity Card/Passport/Certificate of Registration/Partnership deed</li>
+                                                            <li>Passport photograph</li>
+                                                            <li>Copies of qualifications</li>
+                                                            <li>Copy of KISM membership card</li>
+                                                            <li>Copy of current KISM practice licence</li>
+                                                            <li>Copy of Professional Indemnity Cover</li>
+                                                        </ol>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 24px;">
+                                                        <p>
+                                                            I, declare that the foregoing statements are true and correct to the best of my knowledge, information and belief. I authorise the Authority to verify and ascertain with the institutions named the genuineness of the information, qualifications and experience
+                                                            provided. I understand that any statement contained in this application which is found to be false shall invalidate the application. I have read and understood the Public Procurement and Asset
+                                                            Disposal Act, 2015 and undertake to be bound by the Act and any amendments thereto or replacement thereof and the Regulations thereunder as long as I am a registered and licensed procuring or
+                                                            assert disposal agent.
+                                                        </p>
+                                                    </td>
+                                                </tr>
+
+                                                <!--  -->
+                                                <tr>
+                                                    <td style="padding-top: 32px;">
+                                                        <p>
+                                                            Dated and signed at <span style="width: 15%; display:inline-block; border-bottom: 1px dotted black;"></span> on the <span style="width: 6%; display:inline-block; border-bottom: 1px dotted black;"></span>                                                            day of <span style="width: 20%; display:inline-block; border-bottom: 1px dotted black;"></span> 20 <span style="width: 10%; display:inline-block; border-bottom: 1px dotted black;"></span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            Declared by me <span style="width: 40%; display:inline-block; border-bottom: 1px dotted black;"></span> Signature: <span style="width: 23%; display:inline-block; border-bottom: 1px dotted black;"></span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 32px;">
+                                                        <p>In the presence of</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            (Advocate) <span style="width: 45%; display:inline-block; border-bottom: 1px dotted black;"></span> Signature: <span style="width: 23%; display:inline-block; border-bottom: 1px dotted black;"></span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            At <span style="width: 30%; display:inline-block; border-bottom: 1px dotted black;"></span> on the <span style="width: 5%; display:inline-block; border-bottom: 1px dotted black;"></span> day
+                                                            of <span style="width: 25%; display:inline-block; border-bottom: 1px dotted black;"></span> 20 <span style="width: 10%; display:inline-block; border-bottom: 1px dotted black;"></span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>(Advocate’s stamp)</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Section J -->
+                                    <tr>
+                                        <td style="padding-top: 40px;">
+                                            <table width="100%" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>
+                                                        <p style="text-align: center;">
+                                                            <b>For official use</b>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="padding-top: 20px;">
+                                                        <p>
+                                                            Application No: <span style="width: 75%; display:inline-block; border-bottom: 1px dotted black;"></span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            Date acknowledged: <span style="width: 69%; display:inline-block; border-bottom: 1px dotted black;"></span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            Approved/rejected: <span style="width: 70%; display:inline-block; border-bottom: 1px dotted black;"></span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            Minute No: <span style="width: 79%; display:inline-block; border-bottom: 1px dotted black;"></span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            Certificate dispatched: <span style="width: 66%; display:inline-block; border-bottom: 1px dotted black;"></span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            Certificate acknowledged: <span style="width: 62%; display:inline-block; border-bottom: 1px dotted black;"></span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            Signature: <span style="width: 55%; display:inline-block; border-bottom: 1px dotted black;"></span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 16px;">
+                                                        <p>
+                                                            Dated: <span style="width: 59%; display:inline-block; border-bottom: 1px dotted black;"></span>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>
